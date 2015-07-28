@@ -78,7 +78,7 @@ Gefið er :math:`x_0,\dots,x_n`. Reiknum :math:`f(x_n)`.
    | :math:`b_{n+1}=x_n`, og
    | :math:`x_{n+1}=\tfrac12(a_{n+1}+b_{n+1})`.
 
-Skekkjumat í helmingunaraðferð:
+Skekkjumat í helmingunaraðferð
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ef við látum miðpunktinn :math:`p_n=\tfrac 12(a_n+b_n)` vera
@@ -91,8 +91,8 @@ og við höfum skekkjumatið
 
 .. math::
 
-   |e_n|\leq  \dfrac{b_n - a_n}{2}\ \pause
-   = \frac{b_{n-1}-a_{n-1}}{2^2} = \pause \ldots = \dfrac{b_1-a_1}{2^{n}},
+   |e_n|\leq  \dfrac{b_n - a_n}{2}\ 
+   = \frac{b_{n-1}-a_{n-1}}{2^2} = \ldots = \dfrac{b_1-a_1}{2^{n}},
 
  það er
 
