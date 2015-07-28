@@ -31,9 +31,13 @@ import shlex
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
+    'sphinx.ext.ifconfig',
 ]
+
+mathjax_path = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -50,9 +54,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Töluleg greining'
-copyright = '2015, Benedikt S. Magnússon'
-author = 'Benedikt S. Magnússon'
+project = u'Töluleg greining'
+copyright = '2015, Benedikt Steinar Magnusson'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -69,6 +72,7 @@ release = '0.1'
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
 language = 'is'
+locale_dirs = ['locale/'] 
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -112,7 +116,11 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+
+html_theme = "sphinx_rtd_theme"
+html_theme_path = ['_themes']
+
+html_add_permalinks = True
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -131,12 +139,12 @@ html_theme = 'alabaster'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = '_static/hi_horiz_raunvisindadeild.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-#html_favicon = None
+html_favicon = '_static/favicon_2.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -176,10 +184,10 @@ html_static_path = ['_static']
 #html_show_sourcelink = True
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
-#html_show_sphinx = True
+html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-#html_show_copyright = True
+html_show_copyright = False
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
@@ -209,6 +217,16 @@ htmlhelp_basename = 'Tluleggreiningdoc'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
+    'fncychap': '\\usepackage[Sonny]{fncychap}',
+    'papersize': 'a4paper',
+    'preamble': '''
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+''',
+}
+
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
 
@@ -220,19 +238,18 @@ latex_elements = {
 
 # Latex figure (float) alignment
 #'figure_align': 'htbp',
-}
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'Tluleggreining.tex', 'Töluleg greining Documentation',
-   'Benedikt S. Magnússon', 'manual'),
+  ('index', 'Tgr.tex', u'Töluleg greining',
+   u'Benedikt Steinar Magnússon', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-#latex_logo = None
+latex_logo  = '_static/hi_horiz_raunvisindadeild.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
@@ -256,8 +273,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'tluleggreining', 'Töluleg greining Documentation',
-     [author], 1)
+    ('index', 'tluleggreining', 'Töluleg greining Documentation',
+     ['Benedikt Steinar Magnússon'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -271,7 +288,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'Tluleggreining', 'Töluleg greining Documentation',
-   author, 'Tluleggreining', 'One line description of project.',
+   'Benedikt Steinar Magnússon', 'Tluleggreining', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -286,3 +303,6 @@ texinfo_documents = [
 
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
+
+# Example configuration for intersphinx: refer to the Python standard library.
+intersphinx_mapping = {'http://docs.python.org/': None}

@@ -1,13 +1,3 @@
-:Date:   7. og 9. janúar 2015
-
-.. role:: math(raw)
-   :format: html latex
-..
-
-.. contents::
-   :depth: 3
-..
-
 Lagt af stað
 ============
 
@@ -101,7 +91,7 @@ að til er :math:`N>0` þannig að
 
 .. math::
 
-   \lim_{n\to \infty}x_n=r \qquad \pause\text{ eða } \qquad  x_n\to r
+   \lim_{n\to \infty}x_n=r \qquad \text{ eða } \qquad  x_n\to r
        \text{ ef } n\to \infty.
 
 Ef runan :math:`(x_n)` er samleitin að markgildinu :math:`r` þá segjum
@@ -123,7 +113,7 @@ er :math:`\lambda\in ]0,1[` þannig að
 
 .. math:: \lim_{n\to \infty}\dfrac{|e_{n+1}|}{|e_n|^2}=\lambda,
 
-og *samleitin af stigi :math:`\alpha`* (e. convergence of order
+    og *samleitin af stigi* :math:`\alpha` (e. convergence of order
 :math:`\alpha`), þar sem :math:`\alpha> 1`, ef til er :math:`\lambda>0`
 þannig að
 
@@ -144,7 +134,7 @@ ef til er :math:`\lambda>0` og :math:`N>0` þannig að
 
 .. math:: |e_{n+1}|\leq \lambda |e_n|^2, \qquad n\geq N,
 
-og *að minnsta kosti samleitin af stigi :math:`\alpha`*, þar sem
+og *að minnsta kosti samleitin af stigi* :math:`\alpha`, þar sem
 :math:`\alpha> 1`, ef til eru :math:`\lambda>0` og :math:`N>0` þannig að
 
 .. math:: |e_{n+1}|\leq \lambda |e_n|^\alpha, \qquad n\geq N.
@@ -156,7 +146,7 @@ Látum nú :math:`f : I \to {\mathbb  C}` vera fall á bili :math:`I` sem
 tekur gildi í tvinntölunum. Ef :math:`f` er deildanlegt í sérhverjum
 punkti í :math:`I`, þá táknum við afleiðuna með :math:`f'`. Ef
 :math:`f'` er deildanlegt í sérhverjum punkti í :math:`I`, þá táknum við
-*aðra afleiðu *:math:`f` með :math:`f''`, og svo framvegis. **
+*aðra afleiðu* :math:`f` með :math:`f''`, og svo framvegis.
 
 Við skilgreinum með þrepun :math:`f^{(k)}` fyrir :math:`k = 0,1,2,
 \ldots` þannig að :math:`f^{(0)} = f` og ef :math:`f^{(k-1)}` er
@@ -272,7 +262,7 @@ gefur
 
 .. math:: 0.01 - \sin 0.01 = 0.1667\cdot 10^{-7}
 
- og við erum bara með 4 markverða stafi.
+og við erum bara með 4 markverða stafi.
 
 Hér dugir að taka aðeins þriðja stigs liðinn í Taylor-formúlunni
 
@@ -324,16 +314,16 @@ Við getum stillt upp jöfnunum svona
 
 .. math:: e=r-x
 
-*skekkjan *(e. error)* í nálgun á :math:`r` með :math:`x`* eða bara
+*skekkjan (e. error) í nálgun á* :math:`r` *með* :math:`x` eða bara
 *skekkja*.
 
-*Algildi skekkju *(e. absolute error)** er tölugildið :math:`|e|=|r-x|`
+*Algildi skekkju (e. absolute error)* er tölugildið :math:`|e|=|r-x|`
 
 Ef vitað er að :math:`r\neq 0`, þá nefnist
 
 .. math:: \dfrac{|e|}{|r|}=\dfrac{|r-x|}{|r|}
 
-*hlutfallsleg skekkja *(e. relative error)** í nálgun á :math:`r` með
+*hlutfallsleg skekkja (e. relative error)* í nálgun á :math:`r` með
 :math:`x`.
 
 **Ath:** Auðvitað er talan :math:`r` sem við leitum að óþekkt (annars
@@ -551,8 +541,8 @@ Skilgreining
 ^^^^^^^^^^^^
 
 Gerum ráð fyrir að :math:`r\neq 0`, þá segjum við að :math:`x` sé
-*nálgun á :math:`r` með :math:`t` markverðum stöfum *(e. significant
-digits)** ef
+*nálgun á* :math:`r` *með* :math:`t` *markverðum stöfum (e. significant
+digits)* ef
 
 .. math:: \frac{|r-x|}{|r|} \leq 10^{-t}.
 
@@ -850,8 +840,8 @@ Markverðir :math:`\beta`-stafir
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ef rauntalan :math:`x` er nálgun á :math:`r`, þá segjum við að :math:`x`
-sé nálgun á :math:`r` með *að minnsta kosti :math:`t` markverðum
-:math:`\beta`-stöfum* ef
+sé nálgun á :math:`r` með *að minnsta kosti* :math:`t` *markverðum*
+:math:`\beta` *-stöfum* ef
 
 .. math:: \dfrac{|r-x|}{|r|}\leq \beta^{-t}.
 
@@ -859,8 +849,8 @@ Ef við höfum að auki að
 
 .. math:: \beta^{-t-1}<\dfrac{|r-x|}{|r|}\leq \beta^{-t}.
 
-þá segjum við að :math:`x` sé nálgun á :math:`r` með *:math:`t`
-markverðum :math:`\beta`-stöfum*.
+þá segjum við að :math:`x` sé nálgun á :math:`r` með :math:`t`
+*markverðum* :math:`\beta` *-stöfum*.
 
 Athugið að ef :math:`e` er minnsta heila talan þannig að
 :math:`|r|<\beta^e`, þá gefur seinni ójafnan matið
@@ -877,7 +867,7 @@ nefnist talan
 
 .. math:: x = (\pm 0.d_1d_2\dots d_k)_\beta\times \beta^e
 
-*afskurður tölunnar :math:`r` við :math:`k`-ta aukastaf :math:`r`*, en
+*afskurður tölunnar* :math:`r` *við* :math:`k` *-ta aukastaf* :math:`r`, en
 talan
 
 .. math::
@@ -889,7 +879,7 @@ talan
        &d_{k+1}\geq \beta/2.
        \end{cases}
 
-nefnist *afrúningur tölunnar :math:`r` við :math:`k`-ta aukastaf*.
+nefnist *afrúningur tölunnar* :math:`r` *við* :math:`k` *-ta aukastaf*.
 
 Við köllum þessar aðgerðir *afskurð* (e. chopping) og *afrúning*
 (e. rounding).
@@ -953,7 +943,7 @@ Fræðilegar spurningar
 #. Ef :math:`(x_n)` er gefin runa sem stefnir á :math:`r` og skekkjan er
    :math:`e_n=r-x_n`, hvað þýðir þá að runan sé *að minnsta kosti
    línulega samleitin*, *að minnsta kosti ferningssamleitin* og *að
-   minnsta kosti samleitin af stigi :math:`\alpha`*
+   minnsta kosti samleitin af stigi* :math:`\alpha`
 
 #. Eftir hvaða reglum eru tölur afrúnaðar í tugakerfi?
 
@@ -982,5 +972,5 @@ Fræðilegar spurningar
    inniheldur :math:`c` eða á hálfás :math:`x>a` í tilfellinu þegar
    :math:`c=+\infty`?
 
-#. Hvað þýðir að :math:` a_n = O(b_n)` ef :math:`n\to \infty` þegar
+#. Hvað þýðir að :math:`a_n = O(b_n)` ef :math:`n\to \infty` þegar
    :math:`(a_n)` og :math:`(b_n)` eru tvær talnarunur?

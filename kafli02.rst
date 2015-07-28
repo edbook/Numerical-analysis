@@ -1,13 +1,3 @@
-:Date:   14. og 16. janúar 2015
-
-.. role:: math(raw)
-   :format: html latex
-..
-
-.. contents::
-   :depth: 3
-..
-
 Núllstöðvar
 ===========
 
@@ -135,7 +125,7 @@ Látum :math:`f : [a,b] \to \mathbb R` vera samfellt fall. Punktur
 
 .. math:: f(r) = r
 
-kallast *fastapunktur *fallsins :math:`f`. **
+kallast *fastapunktur* fallsins :math:`f`.
 
 Athugasemd
 ~~~~~~~~~~
@@ -759,7 +749,7 @@ nálgum því :math:`r` með :math:`2.233111503`.
 0.5`, þá skilar aðferðin alveg jafn góðri nálgun en þarf um 90 ítranir
 til þess.
 
-Fræðilegar spurningar:
+Fræðilegar spurningar
 ----------------------
 
 #. Hvernig er ítrekunarskrefið í helmingunaraðferð?
