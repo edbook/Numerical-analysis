@@ -12,11 +12,35 @@ class sagecell(nodes.General, nodes.Element):
 
 
 def html_visit_sagecell_node(self, node):
-    # the code is either in R or Sage
-    if node["r"]:
-        self.body.append("<div class='rsage'>")
-    else:
-        self.body.append("<div class='sage'>")
+    # the code is either in R, Sage or Octave
+    # if auto is True the code is run automatically (without having to press evaluation button)
+    # if hidecode is True the code is not displayed 
+    if node["lang"] == "r":
+        if node["auto"]:
+            if node["hidecode"]:
+                self.body.append("<div class='rsageAutoHidden'>")
+            else:
+                self.body.append("<div class='rsageAuto'>")
+        else:
+            self.body.append("<div class='rsage'>")
+    
+    elif node["lang"] == "octave":
+        if node["auto"]:
+            if node["hidecode"]:
+                self.body.append("<div class='osageAutoHidden'>")
+            else:
+                self.body.append("<div class='osageAuto'>")
+        else:
+            self.body.append("<div class='osage'>")
+
+    else:        
+        if node["auto"]:
+            if node["hidecode"]:
+                self.body.append("<div class='sageAutoHidden'>")
+            else:
+                self.body.append("<div class='sageAuto'>")
+        else:
+            self.body.append("<div class='sage'>")
 
     self.body.append("<script type='text/x-sage'>")	    
     self.body.append(node['code'])    
@@ -29,9 +53,9 @@ def html_depart_sagecell_node(self, node):
 
 
 def latex_visit_sagecell_node(self, node):
-    # If "showcode" is True the code is displayed verbatim, 
+    # If "latexcode" is True the code is displayed verbatim, 
     # Then an image of the outcome isi displayed if an image file was given.
-    if node["showcode"]:
+    if node["latexcode"]:
         self.body.append("\n\n")
         self.body.append("\\begin{verbatim}\n")
         self.body.append(node['code'])
@@ -51,11 +75,13 @@ def latex_depart_sagecell_node(self, node):
 class SageCell(Directive):
     has_content = True
     required_arguments = 0
-    optional_arguments = 5
+    optional_arguments = 7
     option_spec = {
         "codefile": directives.unchanged,
-        "r": directives.unchanged,
-        "showcode": directives.unchanged,
+        "lang": directives.unchanged,
+        "auto": directives.unchanged,
+        "hidecode": directives.unchanged,
+        "latexcode": directives.unchanged,
         "img": directives.unchanged,
         "imgwidth": directives.unchanged,
     }
@@ -69,15 +95,25 @@ class SageCell(Directive):
         else:
             code = '\n'.join(self.content)
 
-        if "r" in self.options:
-            r = True
+        if "lang" in self.options:
+            lang = self.options.get("lang")
         else: 
-            r = False
+            lang = "sage"
 
-        if "showcode" in self.options:
-            showcode = True
+        if "auto" in self.options:
+            auto = True
         else: 
-            showcode = False
+            auto = False
+        
+        if "hidecode" in self.options:
+            hidecode = True
+        else: 
+            hidecode = False
+
+        if "latexcode" in self.options:
+            latexcode = True
+        else: 
+            latexcode = False
 
         if "img" in self.options:
             img = self.options.get("img")
@@ -93,8 +129,10 @@ class SageCell(Directive):
 
         node = sagecell()  
         node['code'] = code     
-        node['r'] = r  
-        node['showcode'] = showcode
+        node['lang'] = lang
+        node['auto'] = auto
+        node['hidecode'] = hidecode  
+        node['latexcode'] = latexcode
         node['img'] = img
         node['imgwidth'] = imgwidth
     

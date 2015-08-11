@@ -5,8 +5,8 @@ Installation
 =========
    1. Install this extension: 
         'python(3) setup.py build'
-        'sudo python(3) setup.py install'
-   2. Move 'layout.html' to your '_templates' directory. Change sagecell paths if necessary.
+        'sudo python(3) setup.py install' OR 'python(3) setup.py install --user'
+   2. Move 'layout.html' to your '_templates' directory. Change sagecell paths if necessary. Here you can also change the text on the sagecell evaluation buttons.
    3. Add 'sagecell.sagecell' to your extensions in 'conf.py'
 
 
@@ -22,15 +22,23 @@ Example of usage::
 
 Options
 ======
-The r option is used if the code is to be interpreted as R code, otherwise the code is interpreted as Sage.
+The lang option is set to 'r' if the code is to be interpreted as R code and 'octave' if the code is to be interpreted as Octave, otherwise the code is interpreted as Sage.
 
 Example:
 
 .. sagecell::
-    :r: 
+    :lang: r 
 
     a <- 3
     a+5
+
+.. sagecell::
+    :lang: octave
+
+    A = [ 1, 1, 2; 3, 5, 8; 13, 21, 34 ]
+    B = rand (3, 2)
+    A*B
+
 
 The codefile option is used to read the code from a file instead of writing it directly in the sphinx rst file.
 
@@ -39,7 +47,25 @@ Example:
 .. sagecell::
     :codefile: example.sage
 
-During latex generation, the code is displayed verbatim if the showcode option is chosen. If the img option is set to an image file the image will be displayed (beneath the code if the showcode option is also chosen). The width of the image is set with the imgwidth option, if no width is set the default width is 8cm.
+The auto option is used to have the code be evaluated automatically and display results when the page is loaded.
+
+The hidecode option is used to set the display to minimal, so only the results are displayed but not the code. It only works if the auto option is also used.
+
+Examples:
+
+.. sagecell::
+    :lang: r
+    :codefile: code.R
+    :auto:
+
+.. sagecell::
+    :auto: 
+    :hidecode:   
+
+    a <- 3
+    a+5
+
+During latex generation, the code is displayed verbatim if the latexcode option is chosen. If the img option is set to an image file the image will be displayed (beneath the code if the showcode option is also chosen). The width of the image is set with the imgwidth option, if no width is set the default width is 8cm.
 
 .. sagecell::
     :codefile: example.sage
@@ -47,15 +73,15 @@ During latex generation, the code is displayed verbatim if the showcode option i
     :imgwidth: 4cm
 
 .. sagecell::
-    :r: 
-    :showcode:  
+    :lang: r 
+    :latexcode:  
     :img: ex.png 
 
     a <- 3
     a+5
 
 .. sagecell::
-    :showcode:
+    :latexcode:
 
     2+3
 
