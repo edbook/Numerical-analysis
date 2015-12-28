@@ -14,7 +14,7 @@ requires = ['Sphinx>=0.6', 'setuptools']
 
 
 setup(name='sagecell',
-      version='1.1',
+      version='1.2',
       description='Sphinx sagecell extension',
       author='Solrun Einarsdottir',
       packages=find_packages(),

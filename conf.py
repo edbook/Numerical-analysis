@@ -35,6 +35,8 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
+    'sagecell.sagecell',
+#    'hieroglyph',
 ]
 
 mathjax_path = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -54,8 +56,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Töluleg greining'
-copyright = '2015, Benedikt Steinar Magnusson'
+project = u'Töluleg greining (STÆ405G)'
+copyright = u'2016, Benedikt Steinar Magnússon'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -243,13 +245,13 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'Tgr.tex', u'Töluleg greining',
+  ('index', 'stae405.tex', u'Töluleg greining (STÆ405G)',
    u'Benedikt Steinar Magnússon', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-latex_logo  = '_static/hi_horiz_raunvisindadeild.png'
+latex_logo  = '_static/hi_vnvs_horiz_raunvisindadeild.jpg'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
