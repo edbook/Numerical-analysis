@@ -103,7 +103,7 @@ okkar.
     samleitni; línuleg
     samleitni; ofurlínuleg
     samleitni; ferningssamleitin
-    samleitni; af stigi
+    samleitni; af stigi α
     markgildi
     
 

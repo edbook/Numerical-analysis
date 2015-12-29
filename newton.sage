@@ -1,3 +1,6 @@
+# Benedikt Magnusson, 2015. CC-BY-SA.
+# Addapted from a version of William Stein, 
+# http://wiki.sagemath.org/interact/calculus#Root_Finding_Using_Bisection
 def newton_method(f, c, eps, maxiter=100):
     x = f.variables()[0]
     fprime = f.derivative(x)
@@ -32,5 +35,5 @@ def _(f = x^2 - 2, c = float(0.5), eps=(-3,(-16..-1)), interval=float(0.5)):
              line([(w,h),(w,j)],rgbcolor='black',thickness=0.2) for i,w in enumerate(iterates))
      show(P + L, xmin=z-interval, xmax=z+interval)
 
-show(html("<a rel='license' href='http://creativecommons.org/licenses/by-sa/3.0/'><img alt='Creative Commons License' style='border-width:0' src='https://i.creativecommons.org/l/by-sa/3.0/80x15.png' /></a> by <a href='http://wiki.sagemath.org/interact/calculus#Root_Finding_Using_Bisection'>William Stein</a>"))
+show(html("<a rel='license' href='http://creativecommons.org/licenses/by-sa/3.0/'><img alt='Creative Commons License' style='border-width:0' src='https://i.creativecommons.org/l/by-sa/3.0/80x15.png' /></a> by <a href='http://wiki.sagemath.org/interact/calculus#Newton.27s_Method'>William Stein</a>"))
 
