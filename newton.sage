@@ -28,7 +28,7 @@ def _(f = x^2 - 2, c = float(0.5), eps=(-3,(-16..-1)), interval=float(0.5)):
      print "f(c) = %r"%f(x=z)
      n = len(iterates)
      print "iterations =", n
-     html(iterates)
+     show(html(iterates))
      P = plot(f, (x,z-interval, z+interval), rgbcolor='blue')
      h = P.ymax(); j = P.ymin()
      L = sum(point((w,(n-1-float(i))/n*h), rgbcolor=(float(i)/n,0.2,0.3), pointsize=10) + \

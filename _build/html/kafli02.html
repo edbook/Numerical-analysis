@@ -207,9 +207,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#id5">2.4.4. Athugasemd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id6">2.4.5. Athugasemd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fastapunktssetning">2.4.6. Fastapunktssetning</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sonnun-2-skref-falli-hefur-fastapunkt">2.4.7. 2.3 Sönnun: 2.&nbsp;skref, fallið <span class="math">\(f\)</span> hefur fastapunkt:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sonnun-3-skref-runan-er-samleitin">2.4.8. 2.3 Sönnun: 3.&nbsp;skref, runan <span class="math">\((x_n)\)</span> er samleitin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fastapunktsafer-er-a-minnsta-kosti-linulega-samleitin">2.4.9. Fastapunktsaðferð er að minnsta kosti línulega samleitin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sonnun-1-skref-herping-hefur-i-mesta-lagi-einn-fastapunkt">2.4.7. Sönnun: 1. skref, herping hefur í mesta lagi einn fastapunkt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sonnun-2-skref-falli-hefur-fastapunkt">2.4.8. 2.3 Sönnun: 2.&nbsp;skref, fallið <span class="math">\(f\)</span> hefur fastapunkt:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sonnun-3-skref-runan-er-samleitin">2.4.9. 2.3 Sönnun: 3.&nbsp;skref, runan <span class="math">\((x_n)\)</span> er samleitin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fastapunktsafer-er-a-minnsta-kosti-linulega-samleitin">2.4.10. Fastapunktsaðferð er að minnsta kosti línulega samleitin</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#sniilsafer">2.5. Sniðilsaðferð</a><ul>
@@ -706,6 +707,9 @@
             
   <div class="section" id="nullstovar">
 <h1>2. Núllstöðvar<a class="headerlink" href="#nullstovar" title="Varanlegur hlekkur á titilinn">¶</a></h1>
+<p><em>Build a man a fire, and he&#8217;ll be warm for a day. Set a man on fire, and he&#8217;ll
+be warm for the rest of his life.</em></p>
+<p>- Terry Pratchett, Jingo</p>
 <div class="section" id="nalgun-a-nullsto">
 <h2>2.1. Nálgun á núllstöð<a class="headerlink" href="#nalgun-a-nullsto" title="Varanlegur hlekkur á titilinn">¶</a></h2>
 <div class="section" id="skilgreining">
@@ -749,34 +753,17 @@ getum við farið aftur í skref 1, nema með helmingi minna bil en áður.</p>
 af bilum</p>
 <div class="math">
 \[[a,b]=[a_1,b_1]\supset [a_2,b_2]\supset \cdots\supset [a_n,b_n].\]</div>
-<p>Billengdin helmingast í hverju skrefi og milligildissetningin segir
-okkur að það sé núllstöð á öllum bilunum.</p>
+<p>Billengdin helmingast í hverju skrefi og milligildissetningin segir okkur að það sé núllstöð á öllum bilunum.</p>
 <p>Rununa af bilunum</p>
 <div class="math">
 \[[a,b]= [a_1,b_1]\supset \cdots\supset [a_n,b_n]\supset \cdots\]</div>
-<p>example
-skilgreinum við með ítrun og notum til þess rununa
-<span class="math">\(x_n=\tfrac 12(a_n+b_n)\)</span>.</p>
+<p>skilgreinum við með ítrun og notum til þess rununa <span class="math">\(x_n=\tfrac 12(a_n+b_n)\)</span>.</p>
 <p>Setjum <span class="math">\(a_0=a\)</span>, <span class="math">\(b_0=b\)</span>, og <span class="math">\(x_0=\tfrac 12(a+b)\)</span>.</p>
 <p>Gefið er <span class="math">\(x_0,\dots,x_n\)</span>. Reiknum <span class="math">\(f(x_n)\)</span>.</p>
-<ol class="arabic">
-<li><p class="first">Ef <span class="math">\(f(x_n) = 0\)</span>, þá er núllstöð fundin og við hættum.</p>
-</li>
-<li><div class="first line-block">
-<div class="line">Ef <span class="math">\(f(x_n)\)</span> og <span class="math">\(f(a_n)\)</span> hafa sama formerki, þá setjum</div>
-</div>
-<p>við
-| <span class="math">\(a_{n+1}=x_n\)</span>,
-| <span class="math">\(b_{n+1}=b_n\)</span>, og
-| <span class="math">\(x_{n+1}=\tfrac12(a_{n+1}+b_{n+1})\)</span></p>
-</li>
-<li><div class="first line-block">
-<div class="line">annars setjum við</div>
-<div class="line"><span class="math">\(a_{n+1}=a_n\)</span>,</div>
-<div class="line"><span class="math">\(b_{n+1}=x_n\)</span>, og</div>
-<div class="line"><span class="math">\(x_{n+1}=\tfrac12(a_{n+1}+b_{n+1})\)</span>.</div>
-</div>
-</li>
+<ol class="arabic simple">
+<li>Ef <span class="math">\(f(x_n) = 0\)</span>, þá er núllstöð fundin og við hættum.</li>
+<li>Ef <span class="math">\(f(x_n)\)</span> og <span class="math">\(f(a_n)\)</span> hafa sama formerki, þá setjum við <span class="math">\(a_{n+1}=x_n\)</span>, <span class="math">\(b_{n+1}=b_n\)</span>, og  <span class="math">\(x_{n+1}=\tfrac12(a_{n+1}+b_{n+1})\)</span></li>
+<li>annars setjum við <span class="math">\(a_{n+1}=a_n\)</span>, <span class="math">\(b_{n+1}=x_n\)</span> og <span class="math">\(x_{n+1}=\tfrac12(a_{n+1}+b_{n+1})\)</span>.</li>
 </ol>
 <div class='sageAutoHidden'><script type='text/x-sage'># Benedikt Magnusson, 2015. CC-BY-SA.
 # Addapted from a version of William Stein, 
@@ -932,9 +919,9 @@ nákvæmlega einn fastapunkt <span class="math">\(r\)</span> á bilinu <span cla
   x_{n+1} &amp;= f(x_n), \quad n \geq 0,\end{aligned}\end{split}\]</div>
 <p>stefnir á fastapunktinn.</p>
 <p>Sönnunina brjótum við upp í nokkur skref.</p>
-<blockquote>
-<div>Sönnun: 1.&nbsp;skref, herping hefur í mesta lagi einn fastapunkt</div></blockquote>
-<hr class="docutils" />
+</div>
+<div class="section" id="sonnun-1-skref-herping-hefur-i-mesta-lagi-einn-fastapunkt">
+<h3>2.4.7. Sönnun: 1. skref, herping hefur í mesta lagi einn fastapunkt<a class="headerlink" href="#sonnun-1-skref-herping-hefur-i-mesta-lagi-einn-fastapunkt" title="Varanlegur hlekkur á titilinn">¶</a></h3>
 <p>Sönnum þetta með mótsögn.</p>
 <p>Gerum ráð fyrir að <span class="math">\(r\)</span> og <span class="math">\(s\)</span> séu tveir ólíkir fastapunktar
 á <span class="math">\([a,b]\)</span>. Þá er</p>
@@ -945,7 +932,7 @@ nákvæmlega einn fastapunkt <span class="math">\(r\)</span> á bilinu <span cla
 fastapunkta er í mesta lagi einn</p>
 </div>
 <div class="section" id="sonnun-2-skref-falli-hefur-fastapunkt">
-<h3>2.4.7. 2.3 Sönnun: 2.&nbsp;skref, fallið <span class="math">\(f\)</span> hefur fastapunkt:<a class="headerlink" href="#sonnun-2-skref-falli-hefur-fastapunkt" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<h3>2.4.8. 2.3 Sönnun: 2.&nbsp;skref, fallið <span class="math">\(f\)</span> hefur fastapunkt:<a class="headerlink" href="#sonnun-2-skref-falli-hefur-fastapunkt" title="Varanlegur hlekkur á titilinn">¶</a></h3>
 <p>Látum <span class="math">\(g(x) = f(x) - x\)</span>, þá eru núllstöðvar <span class="math">\(g\)</span> nákvæmlega
 fastapunktar <span class="math">\(f\)</span>.</p>
 <p>Þar sem <span class="math">\(a \leq f(x) \leq b\)</span> fyrir öll <span class="math">\(x \in [a,b]\)</span> er</p>
@@ -964,7 +951,7 @@ jafnframt fastapunktur <span class="math">\(f\)</span>.</p>
 fastapunkt á bilinu.</p>
 </div>
 <div class="section" id="sonnun-3-skref-runan-er-samleitin">
-<h3>2.4.8. 2.3 Sönnun: 3.&nbsp;skref, runan <span class="math">\((x_n)\)</span> er samleitin<a class="headerlink" href="#sonnun-3-skref-runan-er-samleitin" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<h3>2.4.9. 2.3 Sönnun: 3.&nbsp;skref, runan <span class="math">\((x_n)\)</span> er samleitin<a class="headerlink" href="#sonnun-3-skref-runan-er-samleitin" title="Varanlegur hlekkur á titilinn">¶</a></h3>
 <p>Látum <span class="math">\(r\)</span> vera ótvírætt ákvarðaða fastapunktinn á <span class="math">\([a,b]\)</span>.</p>
 <p>Við notfærum okkur að <span class="math">\(f\)</span> er herping og að <span class="math">\(r\)</span> er
 fastapunktur <span class="math">\(f\)</span>, þá fæst að fyrir sérhvert
@@ -987,7 +974,7 @@ fastapunktur <span class="math">\(f\)</span>, þá fæst að fyrir sérhvert
 <p>það er runan <span class="math">\(x_n\)</span> stefnir á <span class="math">\(r\)</span>.</p>
 </div>
 <div class="section" id="fastapunktsafer-er-a-minnsta-kosti-linulega-samleitin">
-<h3>2.4.9. Fastapunktsaðferð er að minnsta kosti línulega samleitin<a class="headerlink" href="#fastapunktsafer-er-a-minnsta-kosti-linulega-samleitin" title="Varanlegur hlekkur á titilinn">¶</a></h3>
+<h3>2.4.10. Fastapunktsaðferð er að minnsta kosti línulega samleitin<a class="headerlink" href="#fastapunktsafer-er-a-minnsta-kosti-linulega-samleitin" title="Varanlegur hlekkur á titilinn">¶</a></h3>
 <p>Af skilgreiningunni á rununni <span class="math">\(x_n\)</span> leiðir beint að</p>
 <div class="math">
 \[|e_{n+1}|=|r-x_{n+1}|=|f(r)-f(x_n)|\leq \lambda|r-x_n|=\lambda|e_n|\]</div>

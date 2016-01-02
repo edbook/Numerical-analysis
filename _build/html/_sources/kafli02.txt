@@ -1,6 +1,11 @@
 Núllstöðvar
 ===========
 
+*Build a man a fire, and he'll be warm for a day. Set a man on fire, and he'll 
+be warm for the rest of his life.*
+
+\- Terry Pratchett, Jingo
+
 Nálgun á núllstöð
 -----------------
 
@@ -58,15 +63,13 @@ af bilum
 
 .. math:: [a,b]=[a_1,b_1]\supset [a_2,b_2]\supset \cdots\supset [a_n,b_n].
 
-Billengdin helmingast í hverju skrefi og milligildissetningin segir
-okkur að það sé núllstöð á öllum bilunum.
+Billengdin helmingast í hverju skrefi og milligildissetningin segir okkur að það sé núllstöð á öllum bilunum.
 
 Rununa af bilunum
 
 .. math:: [a,b]= [a_1,b_1]\supset \cdots\supset [a_n,b_n]\supset \cdots
-example
-skilgreinum við með ítrun og notum til þess rununa
-:math:`x_n=\tfrac 12(a_n+b_n)`.
+
+skilgreinum við með ítrun og notum til þess rununa :math:`x_n=\tfrac 12(a_n+b_n)`.
 
 Setjum :math:`a_0=a`, :math:`b_0=b`, og :math:`x_0=\tfrac 12(a+b)`.
 
@@ -74,17 +77,9 @@ Gefið er :math:`x_0,\dots,x_n`. Reiknum :math:`f(x_n)`.
 
 #. Ef :math:`f(x_n) = 0`, þá er núllstöð fundin og við hættum.
 
-#. | Ef :math:`f(x_n)` og :math:`f(a_n)` hafa sama formerki, þá setjum
-   við
-   | :math:`a_{n+1}=x_n`,
-   | :math:`b_{n+1}=b_n`, og
-   | :math:`x_{n+1}=\tfrac12(a_{n+1}+b_{n+1})`
+#. Ef :math:`f(x_n)` og :math:`f(a_n)` hafa sama formerki, þá setjum við :math:`a_{n+1}=x_n`, :math:`b_{n+1}=b_n`, og  :math:`x_{n+1}=\tfrac12(a_{n+1}+b_{n+1})`
 
-#. | annars setjum við
-   | :math:`a_{n+1}=a_n`,
-   | :math:`b_{n+1}=x_n`, og
-   | :math:`x_{n+1}=\tfrac12(a_{n+1}+b_{n+1})`.
-
+#. annars setjum við :math:`a_{n+1}=a_n`, :math:`b_{n+1}=x_n` og :math:`x_{n+1}=\tfrac12(a_{n+1}+b_{n+1})`.
    
 .. sagecell::
     :auto: 
@@ -233,7 +228,7 @@ stefnir á fastapunktinn.
 
 Sönnunina brjótum við upp í nokkur skref.
 
- Sönnun: 1. skref, herping hefur í mesta lagi einn fastapunkt
+Sönnun: 1. skref, herping hefur í mesta lagi einn fastapunkt
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sönnum þetta með mótsögn.

@@ -191,7 +191,7 @@ Verkefni
 
 Matlab/Octave-forritin eiga að vera hluti af úrlausn og skal þeim skilað ásamt skýrslu í gegnum Uglu.  
 
-Ef við finnum sömu forritin í fleiri en einni úrlausn, þá lítum við á það sem svindl og lækkum einkunn hjá öllum sem skráðir eru fyrir þeim lausnum og eftir atvikum tilkynnt deildarforseta og sett í farveg innan sviðsins (sbr. `51. gr. rgl. 569/2009 HÍ <http://www.hi.is/adalvefur/reglur_fyrir_haskola_islands#51>`_.
+Ef við finnum sömu forritin í fleiri en einni úrlausn, þá lítum við á það sem svindl og lækkum einkunn hjá öllum sem skráðir eru fyrir þeim lausnum og eftir atvikum tilkynnt deildarforseta og sett í farveg innan sviðsins (sbr. `51. gr. rgl. 569/2009 HÍ <http://www.hi.is/adalvefur/reglur_fyrir_haskola_islands#51>`_).
 
 Lokapróf
 ~~~~~~~~
@@ -223,23 +223,15 @@ Frágangur heimadæma
 
 -  Vísið í setningar og niðurstöður sem þið notið
 
--  Notið ekki rökfræðitákn eins og :math:`\Leftarrow`,
-   :math:`\Rightarrow`, :math:`\Leftrightarrow`, :math:`\wedge`,
-   :math:`\vee`
+-  Notið ekki rökfræðitákn eins og :math:`\Leftarrow`, :math:`\Rightarrow`, :math:`\Leftrightarrow`, :math:`\wedge`, :math:`\vee`
 
 -  Textinn á að vera samfelldur og læsilegur (lesið hann sjálf yfir)
 
 -  Skýrt svar/niðurstaða
-   
-   *“Forty-two!” yelled Loonquawl. “Is that all you’ve got to show for
-   seven and a half million years’ work?”*
-   
-   *“I checked it very thoroughly,” said the computer, “and that quite
-   definitely is the answer. I think the problem, to be quite honest with
-   you, is that you’ve never actually known what the question is.”*
-   
-   -Douglas Adams, The Hitchhiker's Guide to the Galaxy
 
+*If you trust in yourself. . .and believe in your dreams. . .and follow your star. . . you'll still get beaten by people who spent their time working hard and learning things and weren't so lazy.*
+
+\- Terry Pratchett, The Wee Free Men
 
 .. raw:: latex
 
@@ -249,8 +241,7 @@ Gagnlegir tenglar
 -----------------
 
 *She got on with her education. In her opinion, school kept on trying to interfere with it.*
-
-\- Terry Pratchett, Soul Music
+-- Terry Pratchett, Soul Music
 
 
 -  `http://stæ.is/os <http://stae.is/os>`_

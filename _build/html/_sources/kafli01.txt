@@ -1,11 +1,9 @@
 Inngangur
 ============
 
-*Build a man a fire, and he'll be warm for a day. Set a man on fire, and he'll 
-be warm for the rest of his life.*
+*He was determined to discover the underlying logic behind the universe. Which was going to be hard, because there wasn't one.*
 
-\- Terry Pratchett, Jingo
-
+\- Terry Pratchett, Mort
 
 Hvað er töluleg greining?
 -------------------------
