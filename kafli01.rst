@@ -76,7 +76,8 @@ og upphafsskilyrðin eru :math:`v(0) =0`.
 
 Verkefnið er því að finna :math:`v`, og reikna svo heildið.
 
-:ref:`Diffurjafnan <eldflaug>` hér að ofan er ólínuleg þannig að við getum ekki vænst
+:ref:`Diffurjafnan <eldflaug>` hér að ofan er ólínuleg og ekki aðgreinanleg þannig 
+að við getum ekki vænst
 þess finna lausn með þeim aðferðum sem við höfum þegar lært. Eins er
 ekki víst að við getum auðveldlega fundið stofnfall :math:`h` fyrir
 :math:`v` til þess að reikna heildið, jafnvel þótt við hefðum :math:`v`.
@@ -100,16 +101,15 @@ okkar.
     samleitni
     samleitni; línuleg
     samleitni; ofurlínuleg
-    samleitni; ferningssamleitin
+    samleitni; ferningssamleitni
     samleitni; af stigi α
     markgildi
     
 
+Skilgreining: Samleitni
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Skilgreining
-~~~~~~~~~~~~
-
-*Rauntalnaruna* :math:`(x_n)` er sögð vera *samleitin * (e. convergent)
+*Rauntalnaruna* :math:`(x_n)` er sögð vera *samleitin* (e. convergent)
 að *markgildinu* :math:`r` ef um sérhvert :math:`\varepsilon>0` gildir
 að til er :math:`N>0` þannig að
 
@@ -150,8 +150,11 @@ og *samleitin af stigi* :math:`\alpha` (e. convergence of order
 .. note:: 
     Runa er ofurlínulega samleitin ef hún er samleitin af stigi :math:`\alpha>1`.
     
-    Ferningssamleitin runa er samleitin af stigi 2 þannig að hún er ofurlínulega samleitin.
+    Ferningssamleitin runa er samleitin af stigi 2 þannig að hún er einnig ofurlínulega samleitin.
 
+Skilgreining
+~~~~~~~~~~~~
+    
 Oft eru notuð veikari hugtök til þess að lýsa samleitni runa (t.d. ef
 við getum ekki fundið :math:`\lambda` og :math:`\alpha` nákvæmlega).
 
@@ -173,11 +176,14 @@ og *að minnsta kosti samleitin af stigi* :math:`\alpha`, þar sem
 Setning Taylors
 ---------------
 
+*Sometimes it's better to light a flamethrower than curse the darkness.*
+\- Terry Pratchett, Men at Arms: The Play
+
 .. index::
-    diffranlegt
-    afleiða
-    rúm samfelldra falla
-    rúm diffranlegra falla
+    föll; diffranlegt
+    föll; afleiða
+    föll; rúm samfelldra falla
+    föll; rúm diffranlegra falla
     
 
 Ritháttur fyrir diffranleg föll
@@ -217,8 +223,9 @@ Taylor-margliða fallsins :math:`f` í punktinum :math:`a` af stigi
 
 Athugið að stig margliðunnar :math:`p` er minna eða jafnt og :math:`m`.
 
-1.2 Skekkja í nálgun með Taylor-margliðu
-----------------------------------------
+
+.. index::
+    setning Taylors
 
 Setning Taylors
 ~~~~~~~~~~~~~~~
@@ -234,6 +241,11 @@ bilsins :math:`I`. Þá er til punktur :math:`\xi` á milli :math:`a` og
 
 Hægri hliðin er oft táknuð :math:`R_m(x)`.
 
+.. note::
+    Þetta þýðir að skekkjan í því að nálga fallið :math:`f(x)` með 
+    Taylor-margliðu af stigi :math:`m` hagar sér eins og 
+    :math:`(x-a)^{m+1}`.
+
 Viðbót
 ~~~~~~
 
@@ -243,11 +255,10 @@ Ef :math:`f^{(m+1)}` er samfellt á lokaða bilinu með endapunkta
 .. math::
 
    \begin{aligned}
-     f(x) - T_mf(x;a)&= \int\limits_a^x 
-     \frac{(x-t)^m}{m!}f^{(m+1)}(t) dt \notag \\
-     &= (x-a)^{m+1} \int\limits_0^1 
-     \frac{(1-s)^m}{m!} f^{(m+1)}(a + s(x-a)) ds\\
-   &= (x-a)^{m+1}g_m(x)\end{aligned}
+     R_m(x) &= f(x) - T_mf(x;a) \\
+     &= \int\limits_a^x \frac{(x-t)^m}{m!}f^{(m+1)}(t) dt \notag \\
+     &= (x-a)^{m+1} \int\limits_0^1 \frac{(1-s)^m}{m!} f^{(m+1)}(a + s(x-a)) ds.
+   \end{aligned}
 
 Sýnidæmi: Nálgun á fallgildum :math:`x-\sin x`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -290,10 +301,8 @@ Skekkjan er gefin með
        = \left|\frac{-\cos(\xi)}{7!}0.1^7\right| 
        \leq \frac{1}{7!}0.1^7 < 0.2\cdot 10^{-10}.
 
- Sem þýðir að við höfum enn 8 markverða stafi.
-
-Ritháttur
-^^^^^^^^^
+Sem þýðir að allir 8 stafir reiknivélarinnar eru markverðir, þ.e.
+allir stafir :math:`1.6658334 \cdot 10^{-4}` eru réttir.
 
 :math:`\sin^{(7)}` hér að ofan táknar 7. afleiðu :math:`\sin`, sem er
 :math:`-\cos`.
@@ -320,8 +329,18 @@ Hér dugir að taka aðeins þriðja stigs liðinn í Taylor-formúlunni
 
 .. math:: R_4(0.01) \leq \frac{0.01^5}{5!} < 10^{-12}
 
+.. index::
+    skekkja
+    skekkja; mæliskekkja
+    skekkja; aðferðarskekkja
+    skekkja; reikningsskekkja
+    skekkja; mannlegar villur
+
 Skekkjur
 --------
+
+.. todo::
+	Bæta við: :math:`plot(e^x-cos(x)-x) from -5*10^{-8} to 5*10^{-8}`.
 
 Við allar úrlausnir á verkefnum í tölulegri greininingu þarf að fást við
 skekkjur. Þær eru af ýmsum toga:
@@ -343,7 +362,14 @@ skekkjur. Þær eru af ýmsum toga:
 
 -  *Mannlegar villur* eru óumflýjanlegar. Það sem við getum gert er
    temja okkur vinnubrögð sem lágmarka líkur á þeim og auðvelda okkur að
-   finna villur sem við gerum.
+   finna villur sem við gerum. 
+   
+   *Real stupidity beats artificial intelligence every time.*
+   -- Terry Pratchett
+
+.. index::
+    skekkja; algildi
+    skekkja; hlutfallsleg
 
 Skekkja í nálgun á rauntölu :math:`r`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -371,10 +397,14 @@ Ef vitað er að :math:`r\neq 0`, þá nefnist
 *hlutfallsleg skekkja (e. relative error)* í nálgun á :math:`r` með
 :math:`x`.
 
-**Ath:** Auðvitað er talan :math:`r` sem við leitum að óþekkt (annars
-þyrftum við ekki að framkvæma alla þessa reikninga), sem þýðir að við
-getum hvergi notað hana í reikninum.
+.. warning::
+    Auðvitað er talan :math:`r` sem við leitum að óþekkt (annars
+    þyrftum við ekki að framkvæma alla þessa reikninga), sem þýðir að við
+    getum hvergi notað hana í reikningum.
 
+.. index::
+    skekkja; fyrirframmat
+    
 Fyrirframmat á skekkju
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -385,6 +415,9 @@ skekkjumarka.
 Ef lausnin er fundin með ítrekunaraðferð er yfirleitt metið hversu
 margar ítrekarnir þarf til þess að nálgun verði innan skekkjumarka.
 
+.. index::
+    skekkja; eftirámat
+
 Eftirámat á skekkju
 ~~~~~~~~~~~~~~~~~~~
 
@@ -393,8 +426,15 @@ reikningum er hætt þegar matið segir að nálgun sé innan skekkjumarka.
 Það gerist yfirleitt þegar gildið sem við reiknum út breytist orðið
 lítið í hverju skrefi.
 
-Eftirámat á skekkju samleitinnar runu (ofurlínuleg samleitni)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hér þarf að skipta í tvö tilvik, fyrst skoðum við tilvikið þegar runan er ofurlínulega samleitin 
+og seinna tilvikið er þegar við vitum aðeins að runan er línulega samleitin, en 
+þá er matið aðeins flóknara.
+
+.. index::
+	samleitni; ofurlínuleg
+
+Ofurlínuleg samleitni -- Eftirámat á skekkju
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Hugsum okkur að við séum að nálga töluna :math:`r` með gildum rununnar
 :math:`x_n`, að við höfum reiknað út :math:`x_0,\dots,x_n` og viljum fá
@@ -421,13 +461,21 @@ Við hættum því útreikningi þegar :math:`|x_{n+1}-x_n|<\varepsilon` þar
 sem :math:`\varepsilon` er fyrirfram gefin tala, sem lýsir þeirri
 nákvæmni sem við viljum ná.
 
-Eftirámat á skekkju samleitinnar runu (amk. línuleg samleitni)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. index::
+	samleitni; línuleg
 
-Ef við vitum ekki meira en að runan :math:`x_n` sé *að minnsta kosti
-línulega samleitin* ; segjum :math:`|e_{n+1}|\leq c|e_n|`,
-:math:`n\geq N`, þar sem :math:`c\in(0,1)`, þá á :math:`\lambda_n` að
-stefna á fasta :math:`\lambda` og :math:`|\lambda|\leq c`. Við höfum
+Línuleg samleitni -- Eftirámat á skekkju
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Skoðum nú tilvikið ef einu upplýsingarnar sem við höfum er 
+að runan :math:`x_n` sé *að minnsta kosti
+línulega samleitin*, þ.e. :math:`c\in [0,1)` og :math:`N\in \mathbb N`
+þannig að 
+
+.. math::
+	|e_{n+1}|\leq c|e_n|, \qquad \text{fyrir } n \geq N.
+
+Þá stefnir :math:`\lambda_n = e_{n+1}/e_n` á fasta :math:`\lambda \leq c` og við höfum
 
 .. math::
 
@@ -474,8 +522,10 @@ og eigum að staðfesta hvort nálgunaraðferðin er ferningssamleitin:
 | 5           | 2.61801395732496   | 0.00000000000001        | 1.272                                           |
 +-------------+--------------------+-------------------------+-------------------------------------------------+
 
-Við metum :math:`e_n\approx |x_{n+1}-x_n|` og þar af leiðandi
-:math:`|e_n|/|e_{n-1}|^2\approx |x_{n+1}-x_n|/|x_n-x_{n-1}|^2`.
+Við metum :math:`e_n\approx |x_{n+1}-x_n|` og þar af leiðandi er
+
+.. math::
+    |e_n|/|e_{n-1}|^2\approx |x_{n+1}-x_n|/|x_n-x_{n-1}|^2.
 
 Við sjáum að hlutfallið :math:`|x_{n+1}-x_n|/|x_n-x_{n-1}|^2` helst
 stöðugt og því ályktum við að aðferðin sé ferningssamleitin.
@@ -507,7 +557,10 @@ Er samleitnistigið :math:`1.618`?
 
 Ef ekki, hvert er þá samleitnistigið?
 
-*Lausn:* Ef miðað er við að runan :math:`(x_n)` sé ofurlínulega
+.. begin-toggle:: 1264951
+    :label: Lausn
+
+Ef miðað er við að runan :math:`(x_n)` sé ofurlínulega
 samleitin, þá er eðlilegt að taka :math:`e_n\approx x_{n+1}-x_n` sem mat
 á skekkjunni :math:`e_n=\sqrt 3-x_n` í :math:`n`-ta ítrekunarskrefinu.
 
@@ -579,11 +632,17 @@ stað :math:`1.618`, þá fæst
 Tölunum neðst í aftasta dálki ber saman með fimm réttum stöfum og því
 ályktum við að :math:`1.660` sé nær því að vera rétta samleitnistigið.
 
-Markverðir stafir
-~~~~~~~~~~~~~~~~~
 
-Skilgreining
-^^^^^^^^^^^^
+.. end-toggle::
+
+Meira um skekkjur
+-----------------
+
+.. index::
+    markverðir stafir
+
+Skilgreining: Markverðir stafir
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Gerum ráð fyrir að :math:`r\neq 0`, þá segjum við að :math:`x` sé
 *nálgun á* :math:`r` *með* :math:`t` *markverðum stöfum (e. significant
@@ -606,8 +665,12 @@ Athugið að ef :math:`e` er minnsta heila talan þannig að
 
 þar sem núllin aftan við punkt eru :math:`t` talsins.
 
-Einnig er hægt að útfæra þetta fyrir aðrar grunntölur en 10, sjá bók
-bls. 36.
+Einnig er hægt að útfæra þetta fyrir aðrar grunntölur en 10.
+
+
+.. index::
+	skekkja; styttingarskekkja
+	annars stigs jafna
 
 Úrlausn annars stigs jöfnu
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -642,6 +705,9 @@ formúlunni
 
 Ef :math:`b^2\approx 4ac` þá lendum við í styttingarskekkjum, en við
 neyðumst til þess að lifa með þeim.
+
+.. index::
+	skekkja; gagnaskekkja
 
 Áhrif gagnaskekkju
 ~~~~~~~~~~~~~~~~~~
@@ -756,6 +822,9 @@ gagnaskekkjunnar séu þau að við fáum lausn með þremur réttum stöfum,
 jöfnunnar :math:`\sin(\pi
 x)=1-e^{-x}` er því :math:`0.813`.
 
+.. index::
+	O-ritháttur
+
 :math:`O`-ritháttur
 ~~~~~~~~~~~~~~~~~~~
 
@@ -805,6 +874,9 @@ Setning Taylors gefur okkur:
        x - \sin x = O(x^3), \quad x \to 0\\
        x - \frac{x^3}{3!} - \sin x = O(x^5), \quad x \to 0\end{gathered}
 
+.. index::
+	O-ritháttur
+
 :math:`O`-ritháttur fyrir runur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -837,6 +909,9 @@ Tvö sýnidæmi
 Fleytitalnakerfið
 -----------------
 
+.. index::
+	fleytitölur
+
 Framsetning á tölum
 ~~~~~~~~~~~~~~~~~~~
 
@@ -858,6 +933,10 @@ framsetning á :math:`r` af gerðinni
 Tölvur reikna ýmist í *tvíundarkerfi* með :math:`\beta=2` eða í
 *sextánundarkerfi* með :math:`\beta=16`, en við mannfólkið með okkar tíu
 fingur reiknum í *tugakerfi* með :math:`\beta=10`.
+
+.. index::
+	fleytitölur; mantissa
+	fleytitölur; markverðir stafir
 
 Mantissa
 ~~~~~~~~
@@ -904,6 +983,10 @@ Athugið að ef :math:`e` er minnsta heila talan þannig að
 
 þar sem núllin aftan við punkt eru :math:`t` talsins.
 
+.. index::
+	afrúningur
+	afskurður
+
 Afrúningur talna
 ~~~~~~~~~~~~~~~~
 
@@ -948,14 +1031,14 @@ Eftir hverja aðgerð í tölvunni þarf að nálga útkomuna með *afskurði* e
 
 Ef við förum ekki varlega þá getur þetta magnað upp skekkju.
 
+Sjá `Úrlausn annars stigs jöfnu`_.
+
 IEEE staðlar
 ~~~~~~~~~~~~
 
 -  Single: :math:`\beta = 2, k=24, m=-125` og :math:`M = 128`,
 
--  Double: :math:`\beta = 2, k=53, m=-1021` og :math:`M=1024`.
-
-Sjá nánar bls. 37 í kennslubók.
+-  Double: :math:`\beta = 2, k=53, m=-1021` og :math:`M = 1024`.
 
 Útreikningur í tugakerfi
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -972,50 +1055,3 @@ aukastaf ef skekkjan í nálgun á þeim er minni en
 
 þá eru síðustu :math:`q` stafir mantissunnar marklausir auk þess sem
 vænta má nokkurs fráviks í :math:`d_{k-q}`.
-
-Fræðilegar spurningar
----------------------
-
-#. Hverjar eru helstu tegundir af skekkjum sem þarf að taka tillit til í
-   tölulegum útreikningum?
-
-#. Hvernig eru *skekkja* og *hlutfallsleg skekkja* í nálgun á rauntölu
-   skilgreindar?
-
-#. Hver er skilgreiningin á því að *rauntalnaruna* :math:`(x_n)` er sögð
-   vera *samleitin* að *markgildinu* :math:`r`?
-
-#. Ef :math:`(x_n)` er gefin runa sem stefnir á :math:`r` og skekkjan er
-   :math:`e_n=r-x_n`, hvað þýðir þá að runan sé *að minnsta kosti
-   línulega samleitin*, *að minnsta kosti ferningssamleitin* og *að
-   minnsta kosti samleitin af stigi* :math:`\alpha`
-
-#. Eftir hvaða reglum eru tölur afrúnaðar í tugakerfi?
-
-#. Hvernig er fyrirframmat á skekkju framkvæmt?
-
-#. Útskýrið hvernig er eftirámat á skekkju framkvæmt við nálgun á
-   rauntölu :math:`r` er aðferðin er ofurlínulega samleitin?
-
-#. Útskýrið hvernig er eftirámat á skekkju framkvæmt við nálgun á
-   rauntölu :math:`r` ef aðferðin er að minnsta kosti línulega
-   samleitin.
-
-#. Útskýrið hvernig samleitnistig runu er metið.
-
-#. Útskýrið hvernig forðast á styttingarskekkjur þegar núllstöðvar
-   annars stigs margliðu :math:`ax^2+bx+c` eru reiknaðar
-
-#. Hvernig er setning Taylors og hvernig er skekkjan í Taylor-nálgun?
-
-#. Útskýrið hvernig hægt er að meta hlutfallslega skekkju í núllstöð
-   :math:`r(\alpha)` fallsins :math:`x\mapsto f(x,\alpha)` ef gefið er
-   að það er skekkja í gildinu sem notað er fyrir :math:`\alpha`.
-
-#. Hvað þýðir að :math:`f(t) = O(g(t))` ef :math:`t \rightarrow c` þar
-   sem :math:`f` og :math:`g` eru föll sem skilgreind eru á bili sem
-   inniheldur :math:`c` eða á hálfás :math:`x>a` í tilfellinu þegar
-   :math:`c=+\infty`?
-
-#. Hvað þýðir að :math:`a_n = O(b_n)` ef :math:`n\to \infty` þegar
-   :math:`(a_n)` og :math:`(b_n)` eru tvær talnarunur?

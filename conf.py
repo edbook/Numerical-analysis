@@ -21,7 +21,7 @@ import shlex
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
-
+sys.path.append(os.path.abspath('.'))
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -30,70 +30,24 @@ import shlex
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-
 extensions = [
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.intersphinx',
+#    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
-    #'sphinx.ext.mathjax',
-
-    # Katex is a substitute for mathjax, renders math much faster
-    # Note: katex extension must come before sagecell to work properly
-    'katex.katex',
-
-    # hieroglyph is used to generate html slides, needs to be installed for use,
-    # see https://github.com/nyergler/hieroglyph
-    #'hieroglyph',
-
-    # Extension for embedding geogebra applets, see README.txt in ggbextension folder
+    'sphinx.ext.mathjax',
+#    'sphinx.ext.pngmath',
     'ggbextension.ggb',
-
-    # Extension for toggleable blocks of text (click to show/hide).
-    # See README.txt in toggleblock-extension folder.
-    'toggleblock.toggleBlock',
-
-    # Extension for embedding sage cells (https://sagecell.sagemath.org/).
-    # See README.txt in sagecell-extension folder. 
-    # Note: sagecell must not be listed before katex.katex
+    'sphinx.ext.ifconfig',
     'sagecell.sagecell',
-
-    # Extension for providing Icelandic to English translation of mathematical terms
-    # on mouse-over. See README in hoverrole folder.
-    'hoverrole.hoverrole',
-
-    # Extension for embedding tracking code from google-analytics and custom scroll depth measurement
-    'analytics.analytics',
-
-    # Extension for embedding datacamp-light which enables constructing simple programming exercises
-    # in R and python, with much greater package support than sagecell in R
-    'datacamp.datacamp',
-
-    # Extension that allows embedding panopto videos from rec.hi.is
-    'panoptoextension.panopto'
+#    'sphinx.ext.graphviz',
+#    'sagecellext',
+    'toggleblock.toggleBlock',
+#    'hieroglyph',
 ]
 
-# -- Custom extension options and paths --------------------------------------
 
-#mathjax_path = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+#mathjax_path = "MathJax.js"
+mathjax_path = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
-katex_path = 'https://cdn.jsdelivr.net/npm/katex@0.10.0-rc/dist/katex.min.js'
-katex_render = 'https://cdn.jsdelivr.net/npm/katex@0.10.0-rc/dist/contrib/auto-render.min.js'
-render_math = 'rendermath.js'
-katex_css = 'https://cdn.jsdelivr.net/npm/katex@0.10.0-rc/dist/katex.min.css'
-
-# Path for latest datacamp javascript file
-datacamp_path = 'https://cdn.datacamp.com/datacamp-light-latest.min.js'
-
-# Paths for sagecell javascript files
-sage_jquery_path = 'http://sagecell.sagemath.org/static/jquery.min.js'
-sage_path = 'http://sagecell.sagemath.org/static/embedded_sagecell.js'
-custom_sage_path = 'custom_sage.js'
-
-# Google Analytics ID, enable_custom_scrolldepth default value is False if not set
-ga_id = 'UA-78633732-8'
-enable_custom_scrolldepth = True
-
-# -- Build options ----------------------------------------------------
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -111,7 +65,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Töluleg greining (STÆ405G)'
-copyright = u'2019, Benedikt Steinar Magnússon'
+copyright = u'2016, Benedikt Steinar Magnússon'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -165,7 +119,7 @@ pygments_style = 'sphinx'
 #keep_warnings = False
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = True
+todo_include_todos = False
 
 
 # -- Options for HTML output ----------------------------------------------
@@ -272,16 +226,16 @@ htmlhelp_basename = 'Tluleggreiningdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
-latex_elements = {
-    'fncychap': '\\usepackage[Sonny]{fncychap}',
-    'papersize': 'a4paper',
-    'preamble': '''
-
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{hyperref}
-''',
-}
+#latex_elements = {
+#    'fncychap': '\\usepackage[Sonny]{fncychap}',
+#    'papersize': 'a4paper',
+#    'preamble': '''
+#
+#\usepackage{amsmath}
+#\usepackage{amssymb}
+#\usepackage{hyperref}
+#''',
+#}
 
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',

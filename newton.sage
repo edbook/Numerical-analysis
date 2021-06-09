@@ -1,39 +1,25 @@
-# Benedikt Magnusson, 2015. CC-BY-SA.
-# Addapted from a version of William Stein, 
-# http://wiki.sagemath.org/interact/calculus#Root_Finding_Using_Bisection
-def newton_method(f, c, eps, maxiter=100):
-    x = f.variables()[0]
-    fprime = f.derivative(x)
-    try:
-        g = f._fast_float_(x)
-        gprime = fprime._fast_float_(x)
-    except AttributeError:
-        g = f; gprime = fprime
-    iterates = [c]
-    for i in xrange(maxiter):
-       fc = g(c)
-       if abs(fc) < eps: return c, iterates
-       c = c - fc/gprime(c)
-       iterates.append(c)
-    return c, iterates
-    
-var('x')    
-#html("<h1>Double Precision Root Finding Using Newton's Method</h1>")
 @interact
-def _(f = x^2 - 2, c = float(0.5), eps=(-3,(-16..-1)), interval=float(0.5)):
-     eps = 10^(eps)
-     print "eps = %s"%float(eps)
-     z, iterates = newton_method(f, c, eps)
-     print "root =", z
-     print "f(c) = %r"%f(x=z)
-     n = len(iterates)
-     print "iterations =", n
-     show(html(iterates))
-     P = plot(f, (x,z-interval, z+interval), rgbcolor='blue')
-     h = P.ymax(); j = P.ymin()
-     L = sum(point((w,(n-1-float(i))/n*h), rgbcolor=(float(i)/n,0.2,0.3), pointsize=10) + \
-             line([(w,h),(w,j)],rgbcolor='black',thickness=0.2) for i,w in enumerate(iterates))
-     show(P + L, xmin=z-interval, xmax=z+interval)
+def _(f = x^2-1, a = float(0), b = float(3), p = float(3), n=(3,(1..10))):
+	df=diff(f,x);             # Sage will compute the derivative of f 
+	NewtonIt(x)=x-(f/df)(x);  # Newton's Iterative Formula which we are calling "NewtonIt"
+	#m=p
+    
+	#M=p
 
-show(html("<a rel='license' href='http://creativecommons.org/licenses/by-sa/3.0/'><img alt='Creative Commons License' style='border-width:0' src='https://i.creativecommons.org/l/by-sa/3.0/80x15.png' /></a> by <a href='http://wiki.sagemath.org/interact/calculus#Newton.27s_Method'>William Stein</a>"))
+	print 'x_0 =  %.4g' % p
+	allPlots = plot(f(x),(x,a,b))
+	allPlots +=text( '\n$x_{%d}$' % (0,),(p,0),color='red',vertical_alignment='top')
+	for i in range(n):
+	    pnew = N(NewtonIt(p))
+	    #allPlots += line([(p,f(x=p)),(pnew,0)],color='red',linestyle="-",thickness=0.5)
+	    allPlots += line([(a,df(x=p)*(a-pnew)),(b,df(x=p)*(b-pnew))],color='green',linestyle="-",thickness=0.5)
+	    allPlots += point((p,f(x=p)))
+	    allPlots += point((pnew,0))
+	    allPlots +=text( '\n$x_{%d}$' % (i+1,),(pnew,0),color='red',vertical_alignment='top')
+	    p = pnew
+	    #m = min(m,p)
+	    #M = max(M,p)
+	    print 'x_%d =  %.4g' % (i+1,p)
 
+	#allPlots += plot(f(x),(x,m,M))
+	show(allPlots)
